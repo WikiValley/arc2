@@ -46,6 +46,11 @@ class AdapterFactory
                     }
                     return new PDOAdapter($configuration);
                 }
+            /*
+             * MediaWiki
+             */
+            } elseif ('MediaWiki' == $adapterName) {
+		    return new MediaWikiDatabaseAdapter($configuration);
             }
         }
 
@@ -60,6 +65,6 @@ class AdapterFactory
      */
     public function getSupportedAdapters()
     {
-        return array('mysqli', 'pdo');
+        return array('mysqli', 'pdo', 'MediaWiki');
     }
 }
