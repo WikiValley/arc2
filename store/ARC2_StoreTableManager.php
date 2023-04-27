@@ -125,7 +125,7 @@ class ARC2_StoreTableManager extends ARC2_Store
         val text NOT NULL,
         val_type tinyint(1) NOT NULL default 0,     /* uri/bnode/literal => 0/1/2 */
         PRIMARY KEY (`id`),
-        UNIQUE KEY (id,val_type),
+        UNIQUE KEY (val(64),val_type),
         KEY v (val(64))
       ) '.$this->getTableOptionsCode().'
     ';
