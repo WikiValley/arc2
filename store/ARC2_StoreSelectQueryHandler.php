@@ -1873,7 +1873,7 @@ class ARC2_StoreSelectQueryHandler extends ARC2_StoreQueryHandler
                 }
                 ++$vc;
                 if ('o' == $col) {
-                    $v_tbls[$join_type][] = ['t_col' => 'id', 'q_col' => $var_name.' lang_dt', 'vc' => $vc];
+                    $v_tbls['LEFT JOIN'][] = ['t_col' => 'id', 'q_col' => $var_name.' lang_dt', 'vc' => $vc];
                     if (strpos($q_sql, '`'.$var_name.' lang_dt`')) {
                         $r .= ', '.$nl.'    V'.$vc.'.val AS `'.$var_name.' lang_dt`';
                         ++$vc;
